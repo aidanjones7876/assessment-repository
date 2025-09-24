@@ -1,0 +1,11 @@
+﻿  functions.cpp
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(26,22): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(32,10): warning C4305: 'return': truncation from 'int' to 'char'
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(32,10): warning C4309: 'return': truncation of constant value
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(69,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(82,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(95,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s258020\source\repos\Calculator project\Calculator project\functions.cpp(97,35): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
+  Calculator project.vcxproj -> C:\Users\s258020\source\repos\Calculator project\x64\Debug\Calculator project.exe
