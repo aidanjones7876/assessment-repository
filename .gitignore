@@ -1,0 +1,12 @@
+*.vsidx
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.json
+*.ipch
+.vs/Calculator project/v17/.suo
+Calculator project/Calculator project.vcxproj
+Calculator project/Calculator project.vcxproj.filters
+Calculator project/Calculator project.vcxproj
+Calculator project/Calculator project.vcxproj.filters

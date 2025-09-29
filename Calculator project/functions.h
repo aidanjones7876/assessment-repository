@@ -4,8 +4,34 @@ using namespace std;
 #ifndef jonesy_H
 #define jonesy_H
 void functionCalls();
+class testFunc {
+private:
+	int totalTests;
+	int passedTests;
+	ofstream logFile;
+
+	void runTest(string name, bool result);
+	void writeToLog(string name);
+
+public:
+
+
+	//function tests
+	void constructorsTest();
+	void lengthTest();
+	void characterAtTest();
+	void equalToTest();
+	void appendTest();
+	void prependTest();
+	void toLowerTest();
+	void toUpperTest();
+	void findTest();
+	void replaceTest();
+	void allTests();
+
+};
 class stringClass {
-protected:
+private:
 	string holder;
 public:
 	stringClass();
@@ -22,6 +48,7 @@ public:
 	void replacement(stringClass toReplace, stringClass replacement);
 	void readFromConsole();
 	void writeToConsole();
+	string getString();
 };
 
 #endif

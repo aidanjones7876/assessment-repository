@@ -1,0 +1,11 @@
+Default constructor- PASSED
+string constructor- PASSED
+Length of 'World'- PASSED
+CharacterAtTest- FAILED
+equal to test- PASSED
+append test- FAILED
+prepend test- FAILED
+to lower test- PASSED
+to upper test- PASSED
+find test- PASSED
+replace test- PASSED

@@ -6,12 +6,35 @@
 #include "functions.h"
 
 using namespace std;
-void filing(string name, bool result) {
-	ofstream logFile("test_functions.txt");
+void testFunc::runTest(string name, bool result) {
+	totalTests++;
+	cout << name;
+
+	//adds space for neatness.
+	for (int i = name.length(); i < 30; i++) {
+		cout << " ";
+	}
+
+	if (result) {
+		cout << "PASS" << endl;
+		passedTests++;
+		writeToLog(name + "- PASSED");
+	}
+	else {
+		cout << "FAIL" << endl;
+		writeToLog(name + "- FAILED");
+	}
+}
+
+void testFunc::writeToLog(string name) {
+
+	ofstream logFile("test_functions.txt", ios::app);
+
 	if (logFile.is_open()) {
 		logFile << name << endl;
 	}
 }
+
 stringClass::stringClass(){//calls the default constructor
 	holder = "";
 	cout << "default constructor called" << endl;
@@ -132,6 +155,94 @@ void functionCalls() {
 	obj1.readFromConsole();
 	obj1.writeToConsole();
 }
-void writeToFile() {
 
+void testFunc::lengthTest() {
+	cout << "Length test" << endl;
+
+	stringClass str("World");
+
+	runTest("Length of 'World'", str.length() == 5);
+}
+void testFunc::constructorsTest() {
+	cout << "constructor tet" << endl;
+
+	stringClass str1;
+	runTest("Default constructor", str1.length() == 0);
+
+	stringClass str2("Hello");
+	runTest("string constructor", str2.length() == 5);
+}
+void testFunc::characterAtTest() {
+	cout << "characterAtTest" << endl;
+
+	stringClass character("Hello");
+
+	runTest("CharacterAtTest", character.characterAt('H') == 0);
+
+}
+void testFunc::equalToTest() {
+	cout << "equal to test" << endl;
+
+	stringClass str1("Hello");
+	stringClass str2("Hello");
+
+	runTest("equal to test", str1.equalTo(str2));
+}
+string stringClass::getString() {
+	return holder;
+}
+void testFunc::appendTest() {
+	cout << "append test" << endl;
+
+	stringClass str("World");
+	stringClass str2("Hello");
+
+	runTest("append test", str.append(str2) == "Hello World");
+}
+void testFunc::prependTest() {
+	cout << "prepend test" << endl;
+
+	stringClass str("Hello");
+	stringClass str2("World");
+	str.prepend(str2);
+	runTest("prepend test", str.getString() == "Hello World");
+}
+void testFunc::toLowerTest() {
+	cout << "to lower test" << endl;
+
+	stringClass str("Hello");
+	str.toLower();
+	runTest("to lower test", str.getString() == "hello");
+}
+void testFunc::toUpperTest() {
+	cout << "to upper test" << endl;
+
+	stringClass str("Hello");
+	str.toUpper();
+	runTest("to upper test", str.getString() == "HELLO");
+}
+void testFunc::findTest() {
+	cout << "find test" << endl;
+
+	stringClass str("Hello World");
+	stringClass str2("Hello");
+
+	runTest("find test", str.Find(str2) == 0);
+}
+void testFunc::replaceTest() {
+	cout << "replace test" << endl;
+
+	stringClass str("Hello World");
+	stringClass str2("World");
+	stringClass str3("Universe");
+	str.replacement(str2, str3);
+
+	runTest("replace test", str.getString() == "Hello Universe");
+
+}
+
+void testFunc::allTests() {
+	cout << "You completed: " << totalTests << endl;
+
+	cout << "You failed: " << totalTests - passedTests << endl;
 }
