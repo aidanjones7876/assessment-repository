@@ -21,8 +21,6 @@ int main() {
 	first.replaceTest();
 	first.allTests();*/
 	welcomeScreen();
-
-	//Dear God why
 	
 	
 	
