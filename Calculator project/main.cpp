@@ -20,7 +20,10 @@ int main() {
 	first.findTest();
 	first.replaceTest();
 	first.allTests();*/
+	
+
 	welcomeScreen();
+	dungeon();
 	
 	
 	
