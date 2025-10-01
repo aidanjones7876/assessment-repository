@@ -184,7 +184,7 @@ void workout() {
 	}
 }
 void dungeon() {
-	//hit 'em with a test
+	//hit 'em with a yes
 	string choice;
 	do {
 		cout << "You are outside of the dungeon, would you like to enter?(yes or no)" << endl;
