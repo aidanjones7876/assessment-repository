@@ -97,69 +97,70 @@ void welcomeScreen() {
 const int ROWS = 3;
 const int COLS = 3;
 void roomChoices(int x, int y) {
-	string rooms[ROWS][COLS] = {
+	string rooms[COLS][ROWS] = {
 		{"1", "2", "3"},
 		{"4", "5", "6"},
 		{"7", "8", "9"}
 	};
 
-	cout << rooms[x][y] << endl;
+	cout << rooms[y][x] << endl;
 
-	if (rooms[x][y] == rooms[0][0]) {
+	if (rooms[y][x] == rooms[0][0]) {
 		cout << "{X, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "You are in a library full of books that hold folktale stories." << endl;
 		movement(0, 0);
 	}
-	if (rooms[x][y] == rooms[0][1]) {
+	if (rooms[y][x] == rooms[0][1]) {
 		cout << "{O, X, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "You are in a dark, moss covered room with what seems to be a rotting chest." << endl;
 		movement(0, 1);
 	}
-	if (rooms[x][y] == rooms[0][2]) {
+	if (rooms[y][x] == rooms[0][2]) {
 		cout << "{O, O, X}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		workout();
 		movement(0, 2);
 	}
-	if (rooms[x][y] == rooms[1][0]) {
+	if (rooms[y][x] == rooms[1][0]) {
 		cout << "{O, O, O}" << endl;
 		cout << "{X, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
-		cout << "====== BOSS ======" << endl;
-		cout << "I hope you leveled up" << endl;
-		attackBoss();
 		movement(1, 0);
+		
 	}
-	if (rooms[x][y] == rooms[1][1]) {
+	if (rooms[y][x] == rooms[1][1]) {
 		cout << "{O, O, O}" << endl;
 		cout << "{O, X, O}" << endl;
 		cout << "{O, O, O}" << endl;
-		movement(0, 0);
+		movement(1, 1);
 	}
-	if (rooms[x][y] == rooms[1][2]) {
+	if (rooms[y][x] == rooms[1][2]) {
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, X}" << endl;
 		cout << "{O, O, O}" << endl;
 		movement(1, 2);
 	}
-	if (rooms[x][y] == rooms[2][0]) {
+	if (rooms[y][x] == rooms[2][0]) {
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{X, O, O}" << endl;
 		movement(2, 0);
 	}
-	if (rooms[x][y] == rooms[2][1]) {
+	if (rooms[y][x] == rooms[2][1]) {
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{O, X, O}" << endl;
-		movement(2, 1);
+		cout << "====== BOSS ======" << endl;
+		cout << "I hope you leveled up" << endl;
+		attackBoss();
+		
 	}
-	if (rooms[x][y] == rooms[2][2]) {
+	if (rooms[y][x] == rooms[2][2]) {
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, X}" << endl;
@@ -246,7 +247,7 @@ void attackBoss() {
 
 	
 }
-void movement(int x, int y) {
+void movement(int y, int x) {
 	
 	
 	cout << "Where would you like to move?(north, south, east, west)" << endl;
@@ -257,19 +258,25 @@ void movement(int x, int y) {
 		cin >> choice;
 	}
 	if (choice == "north") {
-		x++;
-		roomChoices(x, y);
+
+		x--;
+		if (x < 0)
+		{
+			x = 0;
+			cout << "no go pls";
+		}
+		roomChoices(y, x);
 	}
 	if (choice == "south") {
-		x--;
-		roomChoices(x, y);
+		x++;
+		roomChoices(y, x);
 	}
 	if (choice == "east") {
-		y--;
-		roomChoices(x, y);
+		y++;
+		roomChoices(y, x);
 	}
 	if (choice == "west") {
-		y++;
-		roomChoices(x, y);
+		y--;
+		roomChoices(y, x);
 	}
 }
