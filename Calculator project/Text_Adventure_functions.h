@@ -36,8 +36,8 @@ public:
 };
 class boss {
 private:
-	int health = 10000;
-	int damage = 1000000;
+	int health = 100;
+	int damage = 25;
 public:
 	boss();
 	void bossInfo() {

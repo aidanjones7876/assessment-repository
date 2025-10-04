@@ -1,12 +1,12 @@
 ﻿  Text_Adventure_functions.cpp
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(23,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(23,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Text_Adventure_functions.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(33,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(33,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Text_Adventure_functions.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(51,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(51,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Text_Adventure_functions.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.cpp(225,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Calculator project.vcxproj -> C:\Users\s258020\Documents\GitHub\assessment-repository\x64\Debug\Calculator project.exe
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.cpp(230,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Calculator project.vcxproj -> C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\x64\Debug\Calculator project.exe
