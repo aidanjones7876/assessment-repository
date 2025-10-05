@@ -73,4 +73,6 @@ void commands();
 void workout();
 void attackBoss();
 void movement(int x, int y);
+void stats();
+void lampUse();
 #endif

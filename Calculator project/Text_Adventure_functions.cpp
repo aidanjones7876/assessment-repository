@@ -33,10 +33,14 @@ void swordsman::swordsmanInfo() {
 swordsman chosen;
 playerClass player;
 boss final;
+
 class item {
 public:
 	virtual void use() {
 		cout << "not useable" << endl;
+	}
+	virtual void unUse() {
+		cout << "Not un useable" << endl;
 	}
 };
 class lift : public item {
@@ -45,6 +49,16 @@ public:
 		chosen.levelIncrease(1);
 	}
 };
+class lamp : public item {
+public:
+	void use() override {
+		cout << "You have turned on the lamp" << endl;
+	}
+	void unUse() override {
+		cout << "You have turned off the lamp" << endl;
+	}
+};
+lamp active;
 void commands() {
 	cout << "======== LIST OF COMMANDS ========" << endl;
 	cout << "Enter 'stats' to check you statistics" << endl;
@@ -53,7 +67,9 @@ void commands() {
 	cout << "Enter 'spells' to see spells" << endl;
 	cout << "Enter 'cast' and then the name of spell to cast" << endl;
 }
-
+void stats() {
+	chosen.swordsmanInfo();
+}
 void welcomeScreen() {
 	cout << "===== WELCOME TO THE MIDIEVAL TEXT ADVENTURE =====" << endl;
 	cout << "You are in the starting room with a few items (PICKING ONE OF THESE ITEMS WILL DETERMINE YOUR CLASS): " << endl;
@@ -65,6 +81,10 @@ void welcomeScreen() {
 	cin >> choice;
 	if (choice == "help") {
 		commands();
+		cin >> choice;
+	}
+	if (choice == "stats") {
+		stats();
 		cin >> choice;
 	}
 	while (choice != "sword" && choice != "staff" && choice != "bow") {
@@ -89,6 +109,7 @@ void welcomeScreen() {
 	else if (choice == "bow") {
 		cout << "You have chosen the archer class!" << endl;
 	}
+	
 	
 	
 	
@@ -130,7 +151,7 @@ void roomChoices(int x, int y) {
 		cout << "{O, O, O}" << endl;
 		cout << "{X, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
-		cout << "You are in a room covered in old weapons and tools with a lamp." << endl;
+		lampUse();
 		movement(1, 0);
 		
 	}
@@ -152,7 +173,7 @@ void roomChoices(int x, int y) {
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{X, O, O}" << endl;
-		cout << "You find a room that just seems to be a long corridor. Northing special about it." << endl;
+		cout << "You find a room that just seems to be a long corridor. Nothing special about it." << endl;
 		movement(2, 0);
 	}
 	if (rooms[x][y] == rooms[2][1]) {
@@ -172,7 +193,55 @@ void roomChoices(int x, int y) {
 		movement(2, 2);
 	}
 }
+ void lampUse() {
+	 cout << "You are in a room covered in old weapons and tools with a lamp." << endl;
+	bool lampOO = false;
+	string choice;
+	cout << "Would you like to turn on the lamp?(yes or no)" << endl;
+	cin >> choice;
+		
+	if (choice == "yes") {
+		active.use();
+		cout << "Would you like to turn off the lamp?(yes or no)" << endl;
+		cin >> choice;
+		if (choice == "no") {
+			cout << "Then get a move on. Don't die to the monster" << endl;
+		}
+		if (choice == "yes") {
+			active.unUse();
+			cout << "Would you like to turn on the lamp?(yes or no)" << endl;
+			cin >> choice;
+			if (choice == "no") {
+				cout << "Then get a move on. Don't die to the monster" << endl;
+			}
+			if (choice == "yes") {
+				active.use();
+				cout << "Would you like to turn off the lamp?(yes or no)" << endl;
+				cin >> choice;
+				if (choice == "no") {
+					cout << "Then get a move on. Don't die to the monster" << endl;
+				}
+				if (choice == "yes") {
+					active.unUse();
+					cout << "Would you like to turn on the lamp?(yes or no)" << endl;
+					cin >> choice;
+					if (choice == "no") {
+						cout << "Then get a move on. Don't die to the monster" << endl;
+					}
+					if (choice == "yes") {
+						cout << "You have broke the lamp" << endl;
+						if (choice == "no") {
+							cout << "Then get a move on. Don't die to the monster" << endl;
+						}
 
+
+					}
+				}
+			}
+
+		}
+	}
+}
 void workout() {
 	cout << "You find a room with some interesting looking weights. Would you like to lift? " << endl;
 	string choice;
@@ -187,6 +256,10 @@ void workout() {
 	if (choice == "no") {
 		cout << "lame" << endl;
 	}
+	if (choice == "stats") {
+		stats();
+		cin >> choice;
+	}
 }
 void dungeon() {
 	//hit 'em with a yes
@@ -196,6 +269,10 @@ void dungeon() {
 		cin >> choice;
 		if (choice == "help") {
 			commands();
+			cin >> choice;
+		}
+		if (choice == "stats") {
+			stats();
 			cin >> choice;
 		}
 		if (choice != "yes") {
@@ -214,7 +291,10 @@ void attackBoss() {
 	cout << "(ATTACK or RUN)" << endl;
 	cin >> choice;
 	
-	
+	if (choice == "stats") {
+		stats();
+		cin >> choice;
+	}
 	
 	if (choice == "run") {
 		cout << "You're cooked" << endl;
@@ -258,6 +338,10 @@ void movement(int x, int y) {
 	cout << "Where would you like to move?(north, south, east, west)" << endl;
 	string choice;
 	cin >> choice;
+	if (choice == "stats") {
+		stats();
+		cin >> choice;
+	}
 	while (x < 0 || y < 0) {
 		cout << "Can't go that way" << endl;
 		cin >> choice;
