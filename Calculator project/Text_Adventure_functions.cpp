@@ -395,14 +395,17 @@ void attackBoss() {
 	}
 	while (choice == "cast fireball" || choice == "fireball") {
 		cout << "It does nothing since he's a demon" << endl;
+		cout << "(ATTACK or RUN or CAST)" << endl;
 		cin >> choice;
 	}
 	while (choice == "cast strength" || choice == "strength") {
 		spells.strength(chosen.attack());
+		cout << "(ATTACK or RUN or CAST)" << endl;
 		cin >> choice;
 	}
 	while (choice == "cast heal" || choice == "heal") {
 		spells.heal();
+		cout << "(ATTACK or RUN or CAST)" << endl;
 		cin >> choice;
 	}
 	while (choice == "attack") {
@@ -417,16 +420,19 @@ void attackBoss() {
 			while (choice == "cast fireball" || choice == "fireball") {
 				cout << "It does nothing since he's a demon" << endl;
 				chosen.takeDamage(final.attack());
+				cout << "(ATTACK or RUN or CAST)" << endl;
 				cin >> choice;
 			}
 			while (choice == "cast strength" || choice == "strength") {
 				spells.strength(final.takeDamage(chosen.attack()));
 				chosen.takeDamage(final.attack());
+				cout << "(ATTACK or RUN or CAST)" << endl;
 				cin >> choice;
 			}
 			while (choice == "cast heal" || choice == "heal") {
 				spells.heal();
 				chosen.takeDamage(final.attack());
+				cout << "(ATTACK or RUN or CAST)" << endl;
 				cin >> choice;
 			}
 			if (chosen.health() > 0) {
@@ -436,16 +442,19 @@ void attackBoss() {
 			while (choice == "cast fireball" || choice == "fireball") {
 				cout << "It does nothing since he's a demon" << endl;
 				chosen.takeDamage(final.attack());
+				cout << "(ATTACK or RUN or CAST)" << endl;
 				cin >> choice;
 			}
 			while (choice == "cast strength" || choice == "strength") {
 				spells.strength(final.takeDamage(chosen.attack()));
 				chosen.takeDamage(final.attack());
+				cout << "(ATTACK or RUN or CAST)" << endl;
 				cin >> choice;
 			}
 			while (choice == "cast heal" || choice == "heal") {
 				spells.heal();
 				chosen.takeDamage(final.attack());
+				cout << "(ATTACK or RUN or CAST)" << endl;
 				cin >> choice;
 			}
 			
