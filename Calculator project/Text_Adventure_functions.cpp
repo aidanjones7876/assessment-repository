@@ -5,6 +5,7 @@
 #include <string>
 #include "Text_Adventure_functions.h"
 
+
 swordsman::swordsman() {
 	className = "swordsman";
 	maxHealth = 150;
@@ -20,8 +21,9 @@ void playerClass::levelIncrease(float num) {
 	float healthMultiplier = num / 16;
 	maxHealth = maxHealth * (1 + healthMultiplier);
 	damage = damage * (1 + damageMultiplier);
-	cout << damage << endl;
-	cout << maxHealth << endl;
+	cout << "Your level increases by " << num << "!" << endl;
+	cout << "Damage: " << damage << endl;
+	cout << "Health: " << maxHealth << endl;
 }
 void swordsman::swordsmanInfo() {
 	cout << "Class: " << className << endl;
@@ -34,6 +36,29 @@ swordsman chosen;
 playerClass player;
 boss final;
 
+class allSpells {
+private:
+	string spells[5];
+	int spellCount;
+
+public:
+	allSpells() {
+		spells[0] = "strength";
+		spells[1] = "fireball";
+		spells[3] = "heal";
+		spellCount = 3;
+	}
+	int strength(int damage) {
+		return 2 * chosen.attack();
+	}
+	int fireball() {
+		return 45;
+	}
+	float heal() {
+		return 1.4 * chosen.health();
+	}
+};
+allSpells spells;
 class item {
 public:
 	virtual void use() {
@@ -46,6 +71,7 @@ public:
 class lift : public item {
 public:
 	void use() override {
+		
 		chosen.levelIncrease(1);
 	}
 };
@@ -58,6 +84,15 @@ public:
 		cout << "You have turned off the lamp" << endl;
 	}
 };
+class chest : public item {
+public: 
+	void use() override {
+		cout << "You open the chest and see the skeleton of a great general of the past." << endl;
+		cout << "You consume his intelligence and skills!" << endl;
+		chosen.levelIncrease(10);
+	}
+};
+chest chestOpen;
 lamp active;
 void commands() {
 	cout << "======== LIST OF COMMANDS ========" << endl;
@@ -65,7 +100,10 @@ void commands() {
 	cout << "movement options: north, south, east, west" << endl;
 	cout << "Enter 'attack' (only used for boss)" << endl;
 	cout << "Enter 'spells' to see spells" << endl;
-	cout << "Enter 'cast' and then the name of spell to cast" << endl;
+	
+}
+void spellList() {
+	
 }
 void stats() {
 	chosen.swordsmanInfo();
@@ -86,6 +124,9 @@ void welcomeScreen() {
 	if (choice == "stats") {
 		stats();
 		cin >> choice;
+	}
+	if (choice == "spells") {
+		spellList();
 	}
 	while (choice != "sword" && choice != "staff" && choice != "bow") {
 		cout << "That is not a choice. pick from these three: " << endl;
@@ -114,6 +155,8 @@ void welcomeScreen() {
 	
 	
 }
+
+
 //nlnk
 const int ROWS = 3;
 const int COLS = 3;
@@ -137,7 +180,7 @@ void roomChoices(int x, int y) {
 		cout << "{O, X, O}" << endl;
 		cout << "{O, O, O}" << endl;
 		cout << "{O, O, O}" << endl;
-		cout << "You are in a dark, moss covered room with what seems to have a rotting chest." << endl;
+		chestOp();
 		movement(0, 1);
 	}
 	if (rooms[x][y] == rooms[0][2]) {
@@ -193,13 +236,49 @@ void roomChoices(int x, int y) {
 		movement(2, 2);
 	}
 }
+void chestOp() {
+	cout << "You are in a dark, moss covered room with what seems to have a rotting chest." << endl;
+	string choice;
+	cout << "Would you like to open the chest?(yes or no)" << endl;
+	
+	if (choice == "help") {
+		commands();
+		cin >> choice;
+	}
+	if (choice == "stats") {
+		stats();
+		cin >> choice;
+	}
+	while (choice != "yes" && choice != "no") {
+		cout << "Not a choice" << endl;
+		cin >> choice;
+	}
+	if (choice == "yes") {
+		chestOpen.use();
+	}
+	if (choice == "no") {
+		cout << "Then get out of the room bozo" << endl;
+	}
+
+}
  void lampUse() {
 	 cout << "You are in a room covered in old weapons and tools with a lamp." << endl;
-	bool lampOO = false;
+	
 	string choice;
 	cout << "Would you like to turn on the lamp?(yes or no)" << endl;
 	cin >> choice;
-		
+	if (choice == "help") {
+		commands();
+		cin >> choice;
+	}
+	if (choice == "stats") {
+		stats();
+		cin >> choice;
+	}
+	while (choice != "yes" && choice != "no") {
+		cout << "Not a choice" << endl;
+		cin >> choice;
+		}
 	if (choice == "yes") {
 		active.use();
 		cout << "Would you like to turn off the lamp?(yes or no)" << endl;
@@ -249,7 +328,6 @@ void workout() {
 	while (choice == "yes") {
 		lift shredded;
 		shredded.use();
-		chosen.swordsmanInfo();
 		cout << "again?" << endl;
 		cin >> choice;
 	}
@@ -288,7 +366,7 @@ void dungeon() {
 }
 void attackBoss() {
 	string choice;
-	cout << "(ATTACK or RUN)" << endl;
+	cout << "(ATTACK or RUN or CAST)" << endl;
 	cin >> choice;
 	
 	if (choice == "stats") {
@@ -296,16 +374,37 @@ void attackBoss() {
 		cin >> choice;
 	}
 	
-	if (choice == "run") {
-		cout << "You're cooked" << endl;
+	while (choice == "run") {
+		cout << "You can't escape" << endl;
 		chosen.takeDamage(final.attack());
+		cin >> choice;
 		
 	}
 	
 	if (choice == "help") {
 		commands();
 	}
-	
+	if (choice == "spells") {
+		cout << "fireball" << endl;
+		cout << "strength" << endl;
+		cout << "heal" << endl;
+
+	}
+	else {
+		cout << "Choose something else" << endl;
+	}
+	while (choice == "cast fireball" || choice == "fireball") {
+		cout << "It does nothing since he's a demon" << endl;
+		cin >> choice;
+	}
+	while (choice == "cast strength" || choice == "strength") {
+		spells.strength(chosen.attack());
+		cin >> choice;
+	}
+	while (choice == "cast heal" || choice == "heal") {
+		spells.heal();
+		cin >> choice;
+	}
 	while (choice == "attack") {
 		final.takeDamage(chosen.attack());
 
@@ -315,9 +414,38 @@ void attackBoss() {
 				cout << "Sleepin with the fish" << endl;
 				break;
 			}
-			
+			while (choice == "cast fireball" || choice == "fireball") {
+				cout << "It does nothing since he's a demon" << endl;
+				chosen.takeDamage(final.attack());
+				cin >> choice;
+			}
+			while (choice == "cast strength" || choice == "strength") {
+				spells.strength(final.takeDamage(chosen.attack()));
+				chosen.takeDamage(final.attack());
+				cin >> choice;
+			}
+			while (choice == "cast heal" || choice == "heal") {
+				spells.heal();
+				chosen.takeDamage(final.attack());
+				cin >> choice;
+			}
 			if (chosen.health() > 0) {
-				cout << "attack or run" << endl;
+				cout << "attack or run or cast" << endl;
+				cin >> choice;
+			}
+			while (choice == "cast fireball" || choice == "fireball") {
+				cout << "It does nothing since he's a demon" << endl;
+				chosen.takeDamage(final.attack());
+				cin >> choice;
+			}
+			while (choice == "cast strength" || choice == "strength") {
+				spells.strength(final.takeDamage(chosen.attack()));
+				chosen.takeDamage(final.attack());
+				cin >> choice;
+			}
+			while (choice == "cast heal" || choice == "heal") {
+				spells.heal();
+				chosen.takeDamage(final.attack());
 				cin >> choice;
 			}
 			
@@ -342,8 +470,9 @@ void movement(int x, int y) {
 		stats();
 		cin >> choice;
 	}
-	while (x < 0 || y < 0) {
-		cout << "Can't go that way" << endl;
+	
+	while (choice != "west" && choice != "east" && choice != "north" && choice != "south") {
+		cout << "That is not an option, pick again" << endl;
 		cin >> choice;
 	}
 	if (choice == "north") {
@@ -377,10 +506,11 @@ void movement(int x, int y) {
 	if (choice == "west") {
 		if (y < 0)
 		{
-			y = 2;
+			y = 0;
 			cout << "You've reached a dead end";
 		}
 		y--;
 		roomChoices(x, y);
 	}
+	
 }

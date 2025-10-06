@@ -47,12 +47,13 @@ public:
 	int attack() {
 		return damage;
 	}
-	void takeDamage(float damage) {
+	int takeDamage(float damage) {
 		health -= damage;
 		if (health < 0) {
 			health = 0;
 		}
 		cout << "Boss has " << health << " health left" << endl;
+		return health;
 	}
 	int healthy() {
 		return health;
@@ -75,4 +76,6 @@ void attackBoss();
 void movement(int x, int y);
 void stats();
 void lampUse();
+void chestOp();
+void spellList();
 #endif
