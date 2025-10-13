@@ -4,7 +4,7 @@ using namespace std;
 #ifndef adventure_H
 #define adventure_H
 
-
+//holds all the playerclass choice information
 class playerClass {
 protected:
 	string className;
@@ -14,6 +14,7 @@ protected:
 public:
 	void levelIncrease(float num);
 };
+//swordsman
 class swordsman : public playerClass {
 public:
 	swordsman();
@@ -34,6 +35,46 @@ public:
 	}
 
 };
+//mage
+class mage : public playerClass {
+public:
+	mage();
+	void mageInfo();
+	int attack() {
+		return damage;
+	}
+	void takeDamage(int damage) {
+		maxHealth -= damage;
+		if (maxHealth < 0) {
+			maxHealth = 0;
+		}
+		cout << "You have " << maxHealth << " health left" << endl;
+	}
+	int health() {
+		return maxHealth;
+	}
+};
+//archer
+class archer : public playerClass {
+public:
+	archer();
+	void archerInfo();
+	int attack() {
+		return damage;
+	}
+	void takeDamage(int damage) {
+		maxHealth -= damage;
+		if (maxHealth < 0) {
+			maxHealth = 0;
+		}
+		cout << "You have " << maxHealth << " health left" << endl;
+	}
+	int health() {
+		return maxHealth;
+	}
+};
+
+//enemies
 class boss {
 private:
 	int health = 100;
@@ -78,4 +119,5 @@ void stats();
 void lampUse();
 void chestOp();
 void spellList();
+
 #endif

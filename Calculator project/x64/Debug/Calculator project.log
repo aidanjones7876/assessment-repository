@@ -1,11 +1,23 @@
 ﻿  main.cpp
-C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(23,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(24,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(33,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(34,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(51,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(44,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'main.cpp')
   
-  Calculator project.vcxproj -> C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\x64\Debug\Calculator project.exe
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(54,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(63,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(73,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(92,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+  Calculator project.vcxproj -> C:\Users\s258020\Documents\GitHub\assessment-repository\x64\Debug\Calculator project.exe

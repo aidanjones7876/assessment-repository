@@ -42,7 +42,7 @@ struct LootItem {
 
 class LootTable {
 private:
-	LootItem items[5];
+	LootItem items[10];
 	int itemCount;
 	int totalWeight;
 

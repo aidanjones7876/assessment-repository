@@ -5,17 +5,51 @@
 #include <string>
 #include "Text_Adventure_functions.h"
 
-
+//swordsman 
 swordsman::swordsman() {
 	className = "swordsman";
 	maxHealth = 150;
 	damage = 12.5;
 	weapon = "rusty sword";
 }
+void swordsman::swordsmanInfo() {
+	cout << "Class: " << className << endl;
+	cout << "Health: " << maxHealth << endl;
+	cout << "Damage: " << damage << endl;
+	cout << "Weapon: " << weapon << endl;
+}
+//mage
+mage::mage() {
+	className = "mage";
+	maxHealth = 90;
+	damage = 15;
+	weapon = "magic stick";
+}
+void mage::mageInfo() {
+	cout << "Class: " << className << endl;
+	cout << "Health: " << maxHealth << endl;
+	cout << "Damage: " << damage << endl;
+	cout << "Weapon: " << weapon << endl;
+}
+//archer
+archer::archer() {
+	className = "mage";
+	maxHealth = 90;
+	damage = 15;
+	weapon = "magic stick";
+}
+void archer::archerInfo() {
+	cout << "Class: " << className << endl;
+	cout << "Health: " << maxHealth << endl;
+	cout << "Damage: " << damage << endl;
+	cout << "Weapon: " << weapon << endl;
+}
+//enemies
 boss::boss() {
 	health;
 	damage;
 }
+//level increase
 void playerClass::levelIncrease(float num) {
 	float damageMultiplier = num / 8;
 	float healthMultiplier = num / 16;
@@ -25,19 +59,15 @@ void playerClass::levelIncrease(float num) {
 	cout << "Damage: " << damage << endl;
 	cout << "Health: " << maxHealth << endl;
 }
-void swordsman::swordsmanInfo() {
-	cout << "Class: " << className << endl;
-	cout << "Health: " << maxHealth << endl;
-	cout << "Damage: " << damage << endl;
-	cout << "Weapon: " << weapon << endl;
-}
 
+archer deadeye;
+mage wizard;
 swordsman chosen;
 playerClass player;
 boss final;
 
 class allSpells {
-private:
+protected:
 	string spells[5];
 	int spellCount;
 
@@ -146,9 +176,13 @@ void welcomeScreen() {
 	}
 	else if (choice == "staff") {
 		cout << "You have chosen the mage class!" << endl;
+		cout << "Here are your stats: " << endl;
+		wizard.mageInfo();
 	}
 	else if (choice == "bow") {
 		cout << "You have chosen the archer class!" << endl;
+		cout << "Here are your stats: " << endl;
+		deadeye.archerInfo();
 	}
 	
 	
@@ -340,7 +374,7 @@ void workout() {
 	}
 }
 void dungeon() {
-	//hit 'em with a yes
+	
 	string choice;
 	do {
 		cout << "You are outside of the dungeon, would you like to enter?(yes or no)" << endl;
@@ -383,6 +417,7 @@ void attackBoss() {
 	
 	if (choice == "help") {
 		commands();
+	
 	}
 	if (choice == "spells") {
 		cout << "fireball" << endl;
