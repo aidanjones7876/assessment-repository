@@ -30,7 +30,7 @@ public:
 		}
 		cout << "You have " << maxHealth << " health left" << endl;
 	}
-	int health() {
+	float health() {
 		return maxHealth;
 	}
 
@@ -40,7 +40,7 @@ class mage : public playerClass {
 public:
 	mage();
 	void mageInfo();
-	int attack() {
+	float attack() {
 		return damage;
 	}
 	void takeDamage(int damage) {
@@ -50,7 +50,7 @@ public:
 		}
 		cout << "You have " << maxHealth << " health left" << endl;
 	}
-	int health() {
+	float health() {
 		return maxHealth;
 	}
 };

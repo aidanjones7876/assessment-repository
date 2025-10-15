@@ -37,19 +37,19 @@ int main() {
 	//
 
 	////loot table
-	//LootTable garage;
+	/*LootTable garage;
 
-	//garage.addItem("old civic", 80);
-	//garage.addItem("350Z", 15);
-	//garage.addItem("Lambo", 4);
-	//garage.addItem("MClaren Senna", 1);
+	garage.addItem("old civic", 80);
+	garage.addItem("350Z", 15);
+	garage.addItem("Lambo", 4);
+	garage.addItem("MClaren Senna", 1);
 
-	//garage.displayTable();
+	garage.displayTable();
 
-	//cout << "==== Roll simulation ====" << endl;
-	//for (int i = 0; i < 10; i++) {
-	//	cout << "Drop" << (i + 1) << ": " << garage.rollLoot() << endl;
-	//}
+	cout << "==== Roll simulation ====" << endl;
+	for (int i = 0; i < 10; i++) {
+		cout << "Drop" << (i + 1) << ": " << garage.rollLoot() << endl;
+	}*/
 
 	//RPG Game
 	welcomeRPG();
