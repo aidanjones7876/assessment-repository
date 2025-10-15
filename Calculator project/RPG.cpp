@@ -12,8 +12,8 @@ void gob::attack() {
 	cout << "Player Health Remaining: " << user.healthy() << endl;
 }
 void player::levelIncrease(float num) {
-	float damageMultiplier = num / 8;
-	float healthMultiplier = num / 16;
+	float damageMultiplier = num / 7;
+	float healthMultiplier = num / 14;
 	health = health * (1 + healthMultiplier);
 	damage = damage * (1 + damageMultiplier);
 	cout << "Damage: " << damage << endl;
