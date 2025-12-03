@@ -146,6 +146,7 @@ void battling(int monsterDamage, int monsterHealth) {
 	
 	while (choice != "run" && choice != "attack") {
 		cout << "Not a choice try again (Do all lower case if inputted the right word)" << endl;
+		cin >> choice;
 	}
 	while (choice == "run" && user.healthy() > 0) {
 		cout << "No running for you!" << endl;

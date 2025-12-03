@@ -1,37 +1,20 @@
-﻿  main.cpp
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(24,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(63,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(73,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(92,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\RPG.h(302,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-  RPG.cpp
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\RPG.h(302,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  RPG.cpp
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\RPG.h(302,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'RPG.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(24,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(24,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'RPG.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(63,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(63,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'RPG.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(73,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(73,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'RPG.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(92,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\Text_Adventure_functions.h(92,13): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'RPG.cpp')
   
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\RPG.cpp(10,17): warning C4552: '-': result of expression not used
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\RPG.cpp(17,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\s258020\Documents\GitHub\assessment-repository\Calculator project\RPG.cpp(18,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  Calculator project.vcxproj -> C:\Users\s258020\Documents\GitHub\assessment-repository\x64\Debug\Calculator project.exe
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\RPG.cpp(10,17): warning C4552: '-': result of expression not used
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\RPG.cpp(17,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\Calculator project\RPG.cpp(18,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Calculator project.vcxproj -> C:\Users\Robert Admin\OneDrive\Documents\GitHub\assessment-repository\x64\Debug\Calculator project.exe
